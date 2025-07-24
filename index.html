@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Public Toilet Finder</title>
+
+  <!-- Tailwind CSS via the play CDN for rapid prototyping and responsive utilities -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <!-- MapTiler SDK styles and library.  Replace the API key below in your own fork of this repo. -->
+  <link href="https://api.maptiler.com/maps/streets/style.css?key=YOUR_MAPTILER_PUBLIC_KEY_HERE" rel="stylesheet">
+  <script src="https://api.maptiler.com/sdk/js/maptiler-sdk.min.js"></script>
+
+  <!-- Optional Lucide icons font -->
+  <link href="https://unpkg.com/lucide-static@latest/font/lucide.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header / Title -->
+  <header class="p-4 text-center shadow-sm">
+    <h1 class="text-2xl font-semibold">Public Toilet Finder</h1>
+  </header>
+
+  <!-- Controls bar: search and geolocation button -->
+  <div class="p-4 flex gap-2 shadow-sm z-10 bg-white">
+    <input id="search" type="text" placeholder="Search address or place"
+           class="flex-1 rounded-lg border px-3 py-2" />
+    <button id="locateBtn" class="rounded-lg bg-blue-600 text-white px-4">
+      Use My Location
+    </button>
+  </div>
+
+  <!-- Map container fills remaining vertical space -->
+  <main id="map" class="flex-1"></main>
+
+  <!-- Application logic -->
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>
